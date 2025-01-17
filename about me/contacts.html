@@ -1,0 +1,66 @@
+<!DOCTYPE html> 
+<html lang="ru"> 
+<head>
+    <meta charset="UTF-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- для мобилок  -->
+    <title>Мое резюме</title> 
+    <link rel="stylesheet" href="styles.css"> 
+</head>
+<body>
+    <!-- Шапка  -->
+    <header>
+        <!--аватарка -->
+        <div class="avatar">
+            <img src="ava.jpg" alt="Фото"> <!-- Фото-->
+        </div>
+        <!-- Блок с именем -->
+        <div class="name-header">
+            <h1>Александров Максим Александрович</h1> >
+        </div>
+    </header>
+
+     <!-- Кнопка для открытия панели -->
+     <button class="nav-toggle" onclick="openNav()">☰ Меню</button>
+     <!-- Всплывающая панель -->
+     <div id="sideNav" class="sidenav">
+         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+         <a href="index.html">Обо мне</a>
+         <a href="contacts.html">Контакты</a>
+         <a href="skills.html">Мои навыки</a>
+         <a href="photo.html">Мои фото</a>
+     </div>
+  
+
+    <!-- Основной контент -->
+    <main>
+        <h2>Контактная информация</h2> 
+        <p>Телефон: 89877021442</p> 
+        <p>Email: amaksim666@gmail.com</p> 
+        
+        <h3>Оставить обращение</h3> 
+        <form action="send_message.php" method="POST"> <!-- Настраиваем форму для отправки данных методом POST -->
+            <label for="name">Ваше имя:</label> <!-- Подпись  ввода имени -->
+            <input type="text" id="name" name="name" required> <!-- Поле для ввода имени  -->
+
+            <label for="email">Ваш email:</label> <!-- Подпись  ввода email -->
+            <input type="email" id="email" name="email" required> <!-- Поле для ввода email -->
+
+            <label for="subject">Тема обращения:</label> <!-- Подпись ввода темы -->
+            <input type="text" id="subject" name="subject" required> <!-- Поле для ввода темы  -->
+
+            <label for="message">Сообщение:</label> <!-- Подпись  ввода сообщения -->
+            <textarea id="message" name="message" rows="5" required></textarea> <!-- для ввода текста сообщения -->
+
+            <button type="submit">Отправить</button> <!-- Кнопка для отправки -->
+        </form>
+    </main>
+
+    <!-- Подвал  -->
+    <footer>
+        <p>Дата создания: Январь 2025</p> 
+        <p>Последние изменения: Январь 2025</p> 
+    </footer>
+    <script src="script.js" deffer></script>
+</body>
+</html>
+
