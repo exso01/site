@@ -1,0 +1,95 @@
+<!DOCTYPE html> 
+<html lang="ru"> 
+<head>
+    <meta charset="UTF-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- для мобилок  -->
+    <title>Мое резюме</title> 
+    <link rel="stylesheet" href="styles.css"> 
+</head>
+<body>
+    <!-- Шапка  -->
+    <header>
+        <!--аватарка -->
+        <div class="avatar">
+            <img src="ava.jpg" alt="Фото"> <!-- Фото-->
+        </div>
+        <!-- Блок с именем -->
+        <div class="name-header">
+            <h1>Александров Максим Александрович</h1> >
+        </div>
+    </header>
+
+     <!-- Кнопка для открытия панели -->
+     <button class="nav-toggle" onclick="openNav()">☰ Меню</button>
+     <!-- Всплывающая панель -->
+     <div id="sideNav" class="sidenav">
+         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+         <a href="index.html">Обо мне</a>
+         <a href="contacts.html">Контакты</a>
+         <a href="skills.html">Мои навыки</a>
+         <a href="photo.html">Мои фото</a>
+     </div>
+  
+
+    <!-- цкетральный блок  -->
+    <main>
+        <!-- Слайд-шоу -->
+        <section class="slideshow-container">
+            <!-- Первый слайд -->
+            <div class="mySlides fade">
+                <img src="image1.jpg" style="width:100%"> 
+            </div>
+            <!-- Второй слайд -->
+            <div class="mySlides fade">
+                <img src="image2.jpg" style="width:100%"> 
+            </div>
+            <!-- Третий слайд -->
+            <div class="mySlides fade">
+                <img src="image3.jpg" style="width:100%"> 
+            </div>
+
+            <!-- Кнопки для переключения слайдов -->
+            <a class="prev" onclick="plusSlides(-1)">&#10094;</a> <!-- Кнопка для перехода к предыдущему слайду -->
+            <a class="next" onclick="plusSlides(1)">&#10095;</a> <!-- Кнопка для перехода к следующему слайду -->
+        </section>
+    </main>
+
+    <!-- Подвал-->
+    <footer>
+        <p>Дата создания: Январь 2025</p> 
+        <p>Последние изменения: Январь 2025</p> 
+    </footer>
+
+    <!-- Скрипт слайд-шоу -->
+    <script>
+        let slideIndex = 0; // Индекс текущего слайда
+        showSlides(); // Запускаем автоматическое переключение слайдов
+
+        // Функция для автоматического переключения слайдов
+        function showSlides() {
+            let slides = document.getElementsByClassName("mySlides"); // Получаем список всех слайдов
+            for (let i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";  // Скрываем все слайды
+            }
+            slideIndex++; // Переходим к следующему слайду
+            if (slideIndex > slides.length) {slideIndex = 1} // Если индекс превышает количество слайдов, возвращаемся к первому
+            slides[slideIndex - 1].style.display = "block"; // Показываем текущий слайд
+            setTimeout(showSlides, 3000); // Устанавливаем интервал в 3 секунды для смены слайдов
+        }
+
+        // Функция для ручного переключения слайдов вперед или назад
+        function plusSlides(n) {
+            slideIndex += n; // Изменяем индекс слайда на заданное значение
+            let slides = document.getElementsByClassName("mySlides"); // Получаем список всех слайдов
+            if (slideIndex > slides.length) {slideIndex = 1} // Если индекс превышает количество слайдов, переходим к первому
+            if (slideIndex < 1) {slideIndex = slides.length} // Если индекс меньше 1, переходим к последнему слайду
+            for (let i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";  // Скрываем все слайды
+            }
+            slides[slideIndex - 1].style.display = "block"; // Показываем текущий слайд
+        }
+    </script>
+    <script src="script.js" deffer></script>
+</body>
+</html>
+
